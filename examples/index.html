@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--<script src="../dist/zsOpenCore.min.js"></script>-->
+  <script type="module">
+  import { doRegistVisitor, config, ready, getTicket, login } from "/zsOpenCore.js"
+  window.onload = function() {
+    var btn = document.getElementById('btn')
+    btn.onclick = function () {
+      // login({
+      //   timeout: 1000,
+      //   success: (res) => {
+      //     console.log(res, 121212)
+      //   },
+      //   fail: (err) => {
+      //     console.log(err)
+      //   }
+      // })
+      doRegistVisitor({
+        payload: {},
+        success: (res) => {
+          console.log(res, 121212)
+        },
+        fail: (err) => {
+          console.log(err)
+        }
+      })
+    }
+  }
+
+  config({
+    env: 'nc',
+    appKey: '10061wq5D2r7Z1PcTJQ1CQqzMfwRYNo2',
+    appSecret: 'QXD8uMnlCI12ULRlRMKBc3mtsmrKtYsW',
+    channelNo: '10061000',
+    packageNo: '10061000001',
+    ip: '192.168.0.229',
+    machineCode: 'h5TestDeviceCode',
+    osVersion: '10.10',
+    machineModel: '37mhbmii3lvc',
+    networkState: 0,
+    wifiName: 'pigOne',
+    platformPublickey: 'nc',
+    packageName: '121',
+    terminalType: 1
+  })
+  ready(function () {
+    console.log('初始化成功了')
+  })
+
+  // const options = {
+  //   env: 'nc'
+  // }
+  // const openCore = new ZSOpenCore(options)
+  // console.log(openCore)
+  // openCore.doRegistVisitor('sdsd111111')
+  console.log('121212')
+  // getTicket({
+  //   mobile: '15920806620',
+  //   smsKey: '123456',
+  //   smsCode: '1234',
+  //   success: (res) => {
+  //     console.log(res, 121212)
+  //   },
+  //   fail: (err) => {
+  //     console.log(err)
+  //   }
+  // })
+  </script>
+</head>
+<body>
+<h1>js sdk 调试页面</h1>
+<button type="button" id="btn" style="padding: 10px 20px; font-size: 20px">test</button>
+<script>
+// ZSOpenCore.doRegistVisitor('sd')
+// console.log(window.ZSOpenCore)
+</script>
+</body>
+</html>
